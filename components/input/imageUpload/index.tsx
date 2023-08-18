@@ -1,9 +1,9 @@
 import React, {useState} from "react";
-import Button from "@mui/material/Button";
-import Stack from "@mui/material/Stack";
-import {imageUpload} from "components/input/imageUpload/imageuploadStyles";
-import {Box, FormHelperText} from "@mui/material";
+import {Button,Box, FormHelperText,Stack} from "@mui/material";
 import Image from "next/image";
+
+//styles
+import {styles} from "./styles";
 
 type Props = {
     title: string
@@ -17,7 +17,7 @@ export default function UploadButtons({title,validation,name}: Props) {
 
     const [imageUrl, setImageUrl] = useState('');
 
-    const {image,imageWrapper} = imageUpload
+    const {image,imageWrapper} = styles
 
     const handleFileUpload = (event: any) => {
         const file = event.target.files && event.target.files[0];
@@ -52,7 +52,7 @@ export default function UploadButtons({title,validation,name}: Props) {
                 imageUrl &&
                 <Box sx={imageWrapper}>
                      <Image  width={0} height={0}
-                                    style={image}
+                                    style={Object(image)}
                              src={imageUrl} alt="Uploaded Image"/>
                 </Box>
             }

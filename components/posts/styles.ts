@@ -1,5 +1,5 @@
 
-const useStyles = {
+const styles = {
     card: {
         boxShadow: "0px 0px 10px -4px grey",
         padding:'10px',
@@ -11,4 +11,4 @@ const useStyles = {
         marginBottom:"10px"
     },
 } as const
-export { useStyles };
+export { styles };

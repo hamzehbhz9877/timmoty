@@ -1,4 +1,4 @@
-export const imageUpload ={
+export const styles ={
         image: {
             objectFit: "contain",
             width:"100%",

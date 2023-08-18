@@ -5,6 +5,9 @@ import {useFormik} from "formik"
 import {initialValues, validationSchema} from "./validation"
 import ImageUpload from "@/components/input/imageUpload"
 
+//styles
+import {styles} from "./styles";
+
 const Create = () => {
 
     const formik = useFormik({
@@ -14,13 +17,13 @@ const Create = () => {
             alert(JSON.stringify(values, null, 2));
         },
     });
+    const {loginWrapper,loginTitle}=styles
 
     return (
-        <Box maxWidth={"100%"} width={"600px"} margin={'auto'} boxShadow={'0 0 10px -5px'} borderRadius={"12px"}
-             padding={'15px'}
+        <Box sx={loginWrapper}
         >
             <>
-                <Typography textAlign={"center"} variant={"h4"} marginBottom={"15px"}>create post</Typography>
+                <Typography sx={loginTitle} >create post</Typography>
                 <form onSubmit={formik.handleSubmit}>
                     <Grid container spacing={2} sx={{marginBottom: 4}}>
                         <Grid item xs={12} sm={6}>

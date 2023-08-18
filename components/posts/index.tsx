@@ -1,17 +1,16 @@
 import React from 'react';
-import Post from "@/components/post";
-import Grid from "@mui/material/Grid";
-import {List,Button} from '@mui/material';
+import Post from "@/components/posts/post";
+import {List,Button,Grid} from '@mui/material';
 import {useQuery} from "@tanstack/react-query";
 import {getAllPosts} from "@/server/api/posts";
 import {useRouter} from "next/navigation";
 
-const Posts = () => {
+const Index = () => {
 
     const router=useRouter()
-    const { data } = useQuery({ queryKey: ['posts'], queryFn: getAllPosts })
+    const { data } = useQuery({ queryKey: ['posts'], queryFn: getAllPosts ,staleTime:1000 * 11})
 
-    const createPost=()=>router.push('post/create')
+    const createPost=()=>router.push('posts/create')
 
     return (
         <>
@@ -31,4 +30,4 @@ const Posts = () => {
     );
 };
 
-export default Posts;
+export default Index;
